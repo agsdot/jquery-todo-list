@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">	
+<link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">	
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -18,74 +18,7 @@
 
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
-$("form").submit(function() {
-        var input_value = $('input').val();
-        var li = $('<li><input type="checkbox">' + input_value + '<a href="">Delete</a></li>')
-        $('#todo').append(li);
-
-
-        li.children(":first").on('click', function() {
-            if( $(this).is(':checked') ){	
-
-	        	var myli = $(this).parent();
-	        	myli.css('color', 'red');
-	        	myli.css('text-decoration', 'line-through');
-	        	$('#completed').append(myli);
-	        } 
-	        else {
-	         	var myli = $(this).parent();
-	        	myli.css('color', 'black');
-	        	myli.css('text-decoration', 'none');
-	        	$('#todo').append(myli);
-	        };
-	        	
-        });
-
-
-
-
-
-
-
-        // li.children(":first").on('click', function() {
-        // 	var myli = $(this).parent();
-        // 	myli.css('color', 'red');
-        // 	myli.css('text-decoration', 'line-through');
-        // 	$('#completed').append(myli);
-        // });
-
-
-
-
-   //      li.children(":first").on('click', function() {
-			// if( ! $(this).is(':checked') ){
-		 // 		var myli = $(this).parent();
-   //      		myli.css('color', 'black');
-   //      		myli.css('text-decoration', 'none');
-   //      		$('#todo').append(myli);
-
-			// };
-
-   //      });
-
-
-	    $('#todo_item').val('');
-        return false;
-
-});
-
-
-$(document).on('click', 'a', function(e){
-	e.preventDefault();
-	$(this).parent().remove();
-});
-
-
-
-
-
-</script>
+<script src="todo.js"></script>
 </body>
 </html>
 
