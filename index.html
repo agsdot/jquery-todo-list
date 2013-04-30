@@ -26,11 +26,49 @@ $("form").submit(function() {
 
 
         li.children(":first").on('click', function() {
-        	var myli = $(this).parent();
-        	myli.css('color', 'red');
-        	myli.css('text-decoration', 'line-through');
+            if( $(this).is(':checked') ){	
 
+	        	var myli = $(this).parent();
+	        	myli.css('color', 'red');
+	        	myli.css('text-decoration', 'line-through');
+	        	$('#completed').append(myli);
+	        } 
+	        else {
+	         	var myli = $(this).parent();
+	        	myli.css('color', 'black');
+	        	myli.css('text-decoration', 'none');
+	        	$('#todo').append(myli);
+	        };
+	        	
         });
+
+
+
+
+
+
+
+        // li.children(":first").on('click', function() {
+        // 	var myli = $(this).parent();
+        // 	myli.css('color', 'red');
+        // 	myli.css('text-decoration', 'line-through');
+        // 	$('#completed').append(myli);
+        // });
+
+
+
+
+   //      li.children(":first").on('click', function() {
+			// if( ! $(this).is(':checked') ){
+		 // 		var myli = $(this).parent();
+   //      		myli.css('color', 'black');
+   //      		myli.css('text-decoration', 'none');
+   //      		$('#todo').append(myli);
+
+			// };
+
+   //      });
+
 
 	    $('#todo_item').val('');
         return false;
