@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">	
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+<form>
+	<input id="todo_item" type="text" placeholder="Enter a todo list item"></input>
+	<input type="submit" value="Add"></input>
+</form>
+
+<ul id="todo">To Do</ul>
+
+<ul id="completed">Completed</ul>
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$("form").submit(function() {
+        var input_value = $('input').val();
+        var li = $('<li><input type="checkbox">' + input_value + '<a href="">Delete</a></li>')
+        $('#todo').append(li);
+
+
+        li.children(":first").on('click', function() {
+        	var myli = $(this).parent();
+        	myli.css('color', 'red');
+        	myli.css('text-decoration', 'line-through');
+
+        });
+
+	    $('#todo_item').val('');
+        return false;
+
+});
+
+
+$(document).on('click', 'a', function(e){
+	e.preventDefault();
+	$(this).parent().remove();
+});
+
+
+
+
+
+</script>
+</body>
+</html>
+
+<!-- https://gist.github.com/sferik/5485413 -->
+<!-- http://jsfiddle.net/henryzhu/A3z4Y/ -->
+<!-- http://iamzed.com/2006/12/14/using-jquery-to-show-hide-form-elements-based-on-a-checkbox-selection/ -->
