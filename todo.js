@@ -1,6 +1,11 @@
+$(function() {
+$("#datepicker").datepicker();
+});
+
 $("form").submit(function() {
-        var input_value = $('input').val();
-        var li = $('<li><input type="checkbox"> ' + input_value + ' <button class="btn btn-primary delete" type="button">Delete</button></li>')
+		var selected_date = $('#datepicker').val();
+        var input_value = $('#todo_item').val();
+        var li = $('<li><input type="checkbox"> ' + input_value +' due on '+ selected_date + ' <button class="btn btn-primary delete" type="button">Delete</button></li>')
         $('#todo').append(li);
 
  
@@ -31,4 +36,5 @@ $(document).on('click', '.delete', function(e){
 	e.preventDefault();
 	$(this).parent().remove();
 });
+
 

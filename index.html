@@ -7,17 +7,26 @@
 </head>
 <body>
 
+<div class="container">
+	<p>
+<h1>Whats there to do?</h1>
+<div class="span6 datainput">
 <form>
 	<input id="todo_item" type="text" placeholder="Enter a todo list item"></input>
+	<input id="datepicker" type="text" placeholder="Enter the due date"/>
 	<input type="submit" value="Add"></input>
 </form>
+</div>
 
+<div class="span5 listings">
 <ul id="todo">To Do</ul>
 
 <ul id="completed">Completed</ul>
-
+</div>
+</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 <script src="todo.js"></script>
 </body>
 </html>
